@@ -5,6 +5,7 @@ import net.dv8tion.jda.api.entities.channel.Channel;
 import net.dv8tion.jda.api.entities.channel.middleman.MessageChannel;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
+import org.tokyo.settings.Parameters;
 
 import java.util.EventListener;
 
@@ -18,7 +19,7 @@ public class MessageAdapter extends ListenerAdapter {
 
         String rawMessage = receivedMessage.getContentRaw();
 
-        if (channel.getId().equals("1157231482616692823") && !event.getAuthor().isBot()) {
+        if (channel.getId().equals(Parameters.getAdapterChannelId()) && !event.getAuthor().isBot() && Parameters.isAdapterOn()) {
 
             event.getMessage().delete().queue();
 
