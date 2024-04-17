@@ -13,11 +13,11 @@ public class ChangeAdapterChannelCommand extends ListenerAdapter {
         User user = e.getUser();
         Channel channel;
 
-        if (e.getName().equals("cambiarcanal")) {
+        if (e.getName().equals("cambiarcanal") && user == e.getGuild().getOwner().getUser()) {
             channel = e.getOption("canal").getAsChannel();
             Parameters.setAdapterChannelId(channel.getId());
 
-            e.getChannel().sendMessage("Canal cambiado a " + channel.getName() + ".").queue();
+            e.reply("Canal cambiado a " + channel.getName() + ".").queue();
         }
     }
 
