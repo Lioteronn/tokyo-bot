@@ -3,6 +3,7 @@ package org.tokyo.misc;
 import net.dv8tion.jda.api.entities.Message;
 import net.dv8tion.jda.api.entities.channel.Channel;
 import net.dv8tion.jda.api.entities.channel.middleman.MessageChannel;
+import net.dv8tion.jda.api.entities.emoji.Emoji;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 import org.tokyo.settings.Parameters;
@@ -27,7 +28,10 @@ public class MessageAdapter extends ListenerAdapter {
             String formattedMessage = "```sql\n" + rawMessage + "\n```";
 
             channel.sendMessage(sentBy).queue();
-            channel.sendMessage(formattedMessage).queue();
+            channel.sendMessage(formattedMessage).queue((msg) -> {
+                msg.addReaction(Emoji.fromFormatted("✏\uFE0F")).queue();
+            });
+
 
         }
     }
