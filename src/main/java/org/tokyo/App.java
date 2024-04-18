@@ -19,9 +19,10 @@ import java.sql.Connection;
 
 public class App {
 
+    public static JDA jda;
     public static void main( String[] args ) throws InterruptedException {
 
-            JDA jda = JDABuilder.createDefault(Token.getToken())
+            jda = JDABuilder.createDefault(Token.getToken())
                     .enableIntents(GatewayIntent.MESSAGE_CONTENT)
                     .addEventListeners(new MessageAdapter())
                     .addEventListeners(new CustomChannel())

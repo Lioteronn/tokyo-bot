@@ -17,7 +17,6 @@ public class EditAdaptedMessage extends ListenerAdapter {
 
     public static HashMap<String, String> pendingEdits = new HashMap<>();
     public static HashMap<String, String> guilds = new HashMap<>();
-    public static JDA jda = new JDA;
 
     @Override
     public void onMessageReactionAdd(MessageReactionAddEvent e) {
