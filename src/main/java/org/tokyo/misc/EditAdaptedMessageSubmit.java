@@ -22,6 +22,9 @@ public class EditAdaptedMessageSubmit extends ListenerAdapter {
             guild.getTextChannelById(Parameters.getAdapterChannelId()).retrieveMessageById(messageId).queue((msg) -> {
                 msg.editMessage(message).queue();
             });
+
+            EditAdaptedMessage.pendingEdits.remove(authorId);
+            EditAdaptedMessage.guilds.remove(messageId);
         }
     }
 

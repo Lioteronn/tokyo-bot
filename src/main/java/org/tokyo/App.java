@@ -28,8 +28,8 @@ public class App {
                     .addEventListeners(new CustomChannel())
                     .addEventListeners(new ActivateAdapaterCommand())
                     .addEventListeners(new ChangeAdapterChannelCommand())
-                    .addEventListeners(new EditAdaptedMessage())
-                    .addEventListeners(new EditAdaptedMessageSubmit())
+                    //.addEventListeners(new EditAdaptedMessage())
+                    //.addEventListeners(new EditAdaptedMessageSubmit())
                     .build()
                     .awaitReady();
 
