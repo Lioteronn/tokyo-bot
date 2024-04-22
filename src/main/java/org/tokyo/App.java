@@ -40,7 +40,7 @@ public class App {
                             .addOption(OptionType.CHANNEL, "canal", "Canal en el que quieres que se ejecute.")
             ).queue();
 
-            jda.getPresence().setActivity(Activity.playing("Intentando ayudar a los alumnos con SQL! :3"));
+            jda.getPresence().setActivity(Activity.playing("Intentando ayudar a los alumnos con SQL! \uD83D\uDC31"));
 
     }
 

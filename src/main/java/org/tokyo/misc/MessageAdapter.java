@@ -19,6 +19,7 @@ public class MessageAdapter extends ListenerAdapter {
         MessageChannel channel = event.getChannel();
 
         String rawMessage = receivedMessage.getContentRaw();
+        rawMessage = rawMessage.replace("```sql", "").replace("```", "");
 
         if (channel.getId().equals(Parameters.getAdapterChannelId()) && !event.getAuthor().isBot() && Parameters.isAdapterOn()) {
 
